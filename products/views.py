@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from products.models import Product
+from .models import Product
 
 
 def home_view(request):
@@ -8,16 +8,13 @@ def home_view(request):
     context = {
         'items': items
     }
-    return render(request, 'products/index.html', context)
+    return render(request, 'home-page.html', context)
 
 
-def create_product(request):
-    return render(request, 'products/create.html')
+def order_product(request):
+    return render(request, 'product-page.html')
 
 
-def update_product(request):
-    return render(request, 'products/update.html')
+def order_checkout(request):
+    return render(request, 'checkout-page.html')
 
-
-def delete_product(request):
-    return render(request, 'products/index.html')
